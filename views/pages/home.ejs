@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../template/head', { title: title  } ); %>
+        
+    </head>
+    <body>
+       
+        <header>
+            <%- include ('../template/header', { username: username , configHeader:configHeader, currpage : currpage  }); %>
+        </header>
+        <body style="background-color: rgb(120, 240, 190);">
+
+        <img src="/images/logoindex.png" style="width: 1600px; height: 240px;"/>
+        <audio controls autoplay loop hidden="true">
+          <source src="/audio/audiohome.mp3"  type="audio/mpeg"> 
+            </audio>
+        </br>
+        <main>
+         
+            <div class="container" >
+                <div class="jumbotron">
+                    <h1>HKO-Shop</h1>
+                    <p>HKO-Shop is a Vietnamese company selling shoes to young people in many provinces across Vietnam. The company has a turnover of over $ 500,000 / year. Currently each shop has its own database to store transactions for that particular shop. Each store must send sales data to management on a monthly basis, and it takes a long time for management to aggregate the data gathered from all stores. Besides, the board of directors cannot view real-time stock updates.</p>
+                   
+
+                    <p>
+                      <a class="btn btn-lg btn-primary" href="/product" role="button">Click to continue »</a>
+                    </p>
+                  </div>
+            </div>
+            <div class="container">
+                <!-- Example row of columns -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <h2>Shop</h2>
+                    <li>24/7 customer service</li>
+                    <li>Multiple payment methods</li>
+                    <p><a class="btn btn-secondary" href="#" role="button">Order »</a></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h2>Manager</h2>
+                    <li>+</li>
+                    <li>+</li>
+                    <p></p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Manage »</a></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h2>Director</h2>
+                    <li>+</li>
+                    <li>+</li>
+                    <p></p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View reports »</a></p>
+                  </div>
+                </div>
+    
+                <hr>
+    
+              </div> 
+        </main>
+          
+        
+        <%- include ('../template/footer'); %>
+        
+
+    </body>
+
+</html> 
