@@ -62,9 +62,9 @@ app.get('/', homePage);
 function homePage(req, res) {
     if (session.user) 
     {
-        res.render("pages/home", {title: "ATN-Shop Home page", username: session.user.username, configHeader: configHeader, currpage: "Home" });
+        res.render("pages/home", {title: "HKO-Shop Home page", username: session.user.username, configHeader: configHeader, currpage: "Home" });
     } else {
-        res.render("pages/home", {title: "ATN-Shop Home page", username: null , configHeader: configHeader , currpage: "Home" });
+        res.render("pages/home", {title: "HKO-Shop Home page", username: null , configHeader: configHeader , currpage: "Home" });
     }    
     console.log("\n\t ... connect from ", req.connection.remoteAddress, req.headers.host);
 }
@@ -331,7 +331,7 @@ function qrPage(req, res) {
             }).svg();
             xcontent += "<br>" + sv;
 
-            res.render("pages/qr", {title: "ATN-Shop QR-Code page", content: xcontent , configHeader: configHeader  , currpage: "QR code - link"  });
+            res.render("pages/qr", {title: "HKO-Shop QR-Code page", content: xcontent , configHeader: configHeader  , currpage: "QR code - link"  });
 
         }
     }
