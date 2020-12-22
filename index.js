@@ -77,7 +77,7 @@ function homePage(req, res) {
     {
         res.render("pages/home", {title: "HKO-Shop-VN Home page", username: session.user.username, configHeader: configHeader, currpage: "Home" });
     } else {
-        res.render("pages/home", {title: "HKo-Shop-VN Home page", username: null , configHeader: configHeader , currpage: "Home" });
+        res.render("pages/home", {title: "HKO-Shop-VN Home page", username: null , configHeader: configHeader , currpage: "Home" });
     }    
     console.log("\n\t ... connect from ", req.connection.remoteAddress, req.headers.host);
 }
