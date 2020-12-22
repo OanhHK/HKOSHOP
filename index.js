@@ -75,9 +75,9 @@ app.get('/', homePage);
 function homePage(req, res) {
     if (session.user) 
     {
-        res.render("pages/home", {title: "ATN-Shop-VN Home page", username: session.user.username, configHeader: configHeader, currpage: "Home" });
+        res.render("pages/home", {title: "HKO-Shop-VN Home page", username: session.user.username, configHeader: configHeader, currpage: "Home" });
     } else {
-        res.render("pages/home", {title: "ATN-Shop-VN Home page", username: null , configHeader: configHeader , currpage: "Home" });
+        res.render("pages/home", {title: "HKo-Shop-VN Home page", username: null , configHeader: configHeader , currpage: "Home" });
     }    
     console.log("\n\t ... connect from ", req.connection.remoteAddress, req.headers.host);
 }
@@ -96,7 +96,7 @@ function productViewPage(req, res) {
               if (err) throw err;
               
                 res.render("pages/product-list",  {
-                    title: "ATN-Shop PRODUCT page", 
+                    title: "HKO-Shop PRODUCT page", 
                     username: session.user.username,
                     products : productlist 
                     , configHeader: configHeader , currpage: "Product"
@@ -129,7 +129,7 @@ function productPage(req, res) {
               if (err) throw err;
               
                 res.render("pages/product-list",  {
-                    title: "ATN-Shop PRODUCT page", 
+                    title: "HKO-Shop PRODUCT page", 
                     username: session.user.username,
                     products : productlist 
                     , configHeader: configHeader , currpage: "Product"
@@ -201,7 +201,7 @@ function orderPage(req, res) {
 
     console.log("\n\t ", xcontent);
     
-    res.render("pages/order", {title: "ATN-Shop-VN ORDER page", 
+    res.render("pages/order", {title: "HKO-Shop-VN ORDER page", 
         content: xcontent , itemlist: itemlist,  // Object.values(itemlist)
         configHeader: configHeader  , currpage: "Order"  });
 
@@ -220,10 +220,10 @@ function createUserPage(req, res) {
             };
             session.user = accsubmit;
             libDB.res_insertDB(MongoClient, urldb, "atnshop", "user",
-                accsubmit, "pages/user_create", {title: "ATN-Shop-VN create USER page" , configHeader: configHeader , currpage: "create User"}, "Notify", res );
+                accsubmit, "pages/user_create", {title: "HKO-Shop-VN create USER page" , configHeader: configHeader , currpage: "create User"}, "Notify", res );
             console.log("\t create ", accsubmit);
         } else {
-            res.render("pages/user_create", {title: "ATN-Shop-VN create USER page", Notify: "", configHeader: configHeader , currpage: "create User" });
+            res.render("pages/user_create", {title: "HKO-Shop-VN create USER page", Notify: "", configHeader: configHeader , currpage: "create User" });
         }
         console.log("\t /user/create ");
     } else {
@@ -246,7 +246,7 @@ function loginPage(req, res) {
             res.redirect('/');
             console.log(accsubmit);
         } else {
-            res.render("pages/login", {title: "ATN-Shop-VN LOGIN page", configHeader: configHeader , currpage: "Login"  });
+            res.render("pages/login", {title: "HKO-Shop-VN LOGIN page", configHeader: configHeader , currpage: "Login"  });
         }
         console.log("\t login ", req.session);
     }
@@ -379,7 +379,7 @@ function qrPage(req, res) {
             }).svg();
             xcontent += "<br>" + sv;
 
-            res.render("pages/qr", {title: "ATN-ShopVN QR-Code page", content: xcontent , configHeader: configHeader  , currpage: "QR code - link"  });
+            res.render("pages/qr", {title: "HKO-ShopVN QR-Code page", content: xcontent , configHeader: configHeader  , currpage: "QR code - link"  });
 
         }
     }
