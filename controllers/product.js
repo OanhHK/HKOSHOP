@@ -41,7 +41,7 @@ function productPage(req, res) {
               if (err) throw err;
               
                 res.render("pages/product-list",  {
-                    title: "ATN-Shop PRODUCT page", 
+                    title: "HKO-Shop PRODUCT page", 
                     username: session.user.username,
                     products : productlist 
                     , configHeader: configHeader , currpage: "Product"

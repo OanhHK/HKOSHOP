@@ -121,7 +121,7 @@ function orderPage(req, res) {
 
     console.log("\n\t ", xcontent);
     
-    res.render("pages/order", {title: "ATN-Shop ORDER page", 
+    res.render("pages/order", {title: "HKO-Shop ORDER page", 
         content: xcontent , itemlist: itemlist,  // Object.values(itemlist)
         configHeader: configHeader  , currpage: "Order"  });
 
@@ -142,7 +142,7 @@ function productPage(req, res) {
               if (err) throw err;
               
                 res.render("pages/product-list",  {
-                    title: "ATN-Shop PRODUCT page", 
+                    title: "HKO-Shop PRODUCT page", 
                     username: session.user.username,
                     products : productlist 
                     , configHeader: configHeader , currpage: "Product"
@@ -172,10 +172,10 @@ function createUserPage(req, res) {
             };
             session.user = accsubmit;
             libDB.res_insertDB(MongoClient, urldb, "newshop", "user",
-                accsubmit, "pages/user_create", {title: "ATN-Shop create USER page" , configHeader: configHeader , currpage: "create User"}, "Notify", res );
+                accsubmit, "pages/user_create", {title: "HKO-Shop create USER page" , configHeader: configHeader , currpage: "create User"}, "Notify", res );
             console.log("\t create ", accsubmit);
         } else {
-            res.render("pages/user_create", {title: "ATN-Shop create USER page", Notify: "", configHeader: configHeader , currpage: "create User" });
+            res.render("pages/user_create", {title: "HKO-Shop create USER page", Notify: "", configHeader: configHeader , currpage: "create User" });
         }
         console.log("\t /user/create ");
     } else {
@@ -198,7 +198,7 @@ function loginPage(req, res) {
             res.redirect('/');
             console.log(accsubmit);
         } else {
-            res.render("pages/login", {title: "ATN-Shop LOGIN page", configHeader: configHeader , currpage: "Login"  });
+            res.render("pages/login", {title: "HKO-Shop LOGIN page", configHeader: configHeader , currpage: "Login"  });
         }
         console.log("\t login ", req.session);
     }
